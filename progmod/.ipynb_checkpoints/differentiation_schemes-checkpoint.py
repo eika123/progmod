@@ -18,5 +18,3 @@ def backward_differentiation(f, x1, h):
 ## midtpunktsskjema
 def central_difference(f, x0, h):
     return (f(x0 + h) - f(x0 - h))/(2*h)
-
-
