@@ -2,7 +2,7 @@
 """
 Created on Fri Jun  9 20:43:39 2017
 
-@author: 1008kjei
+@author: eika123
 """
 
 # forlengs derivasjonsskjema
@@ -20,9 +20,14 @@ def central_difference(f, x0, h):
     return (f(x0 + h) - f(x0 - h))/(2*h)
 
 
-## thetaskjema. Legg merke til hvordan variabelen
-## theta redifineres til navnet o slik at det er 
-## samsvar mellom kode og matematikk
+"""
+theta-skjemaet samler skjemaene over i en enkelt funksjon ved å
+bruke theta som parameter mellom verdiene theta=0 og theta=1.
+
+theta = 0       <---------->        Baklengs Euler
+theta = 0.5     <---------->        Midtpunktskjema
+theta = 1       <---------->        Forlengs Euler
+"""
 def theta_difference(f, x0, h, theta):
     o = theta
     df = f(x0 + o*h) - f(x0 - (1 - o)*h)
@@ -49,10 +54,8 @@ if __name__ == '__main__':
         print(diff, "thetadiff: ", thetadiff)
         
         
-        """
         scheme(f, x0, h)
         theta_difference(f, x, h, theta)
-        """
 
         
         
