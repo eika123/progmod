@@ -48,14 +48,9 @@ if __name__ == '__main__':
     for theta in thetas:
         
         scheme = thetas[theta]
-        diff = scheme(f, x0, h)
-        thetadiff = theta_difference(f, x0, h, theta)
         
-        print(diff, "thetadiff: ", thetadiff)
-        
-        
-        scheme(f, x0, h)
-        theta_difference(f, x, h, theta)
+        err = abs(scheme(f, x0, h) - theta_difference(f, x0, h, theta))
+        print("%.2g" % err)
 
         
         
